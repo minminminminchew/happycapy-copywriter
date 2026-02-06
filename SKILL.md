@@ -125,11 +125,15 @@ Examples of what to search:
 
 **Share 1-2 key insights** with the user before writing. For example: "Top PH discussion posts tend to open with a personal builder story rather than product features. I'll take that angle."
 
-### Step 6: Generate Copy
+### Step 6: Generate, Score, and Self-Improve (Recursive Loop)
 
-Read [references/platform-guides.md](references/platform-guides.md) for the relevant platform's detailed format rules.
+This step uses a recursive self-improvement loop. Do NOT present copy to the user until it passes all scoring thresholds.
 
-Follow these rules:
+Read [references/platform-guides.md](references/platform-guides.md) for the relevant platform's format rules.
+Read [references/scoring-criteria.md](references/scoring-criteria.md) for the full scoring rubric.
+
+#### 6a. Generate first draft
+
 - Stay true to brand voice. Read brand-foundation.md if not already loaded.
 - Apply insights from Step 5 research. The copy should feel native to the platform.
 - For Chinese: keep technical terms in English (Claude Code, Skills, Agent, AI). Never force-translate.
@@ -138,32 +142,50 @@ Follow these rules:
 - **Long-form** (articles, landing pages): produce 1 structured draft
 - End with a subtle, channel-appropriate CTA
 
-### Step 7: Quality Check
+#### 6b. Score against criteria
 
-Before presenting copy, run these checks in order:
+Score every variation against the scoring criteria in scoring-criteria.md. Apply:
+- All 6 universal criteria (Hook Power, Human Voice, Brand Alignment, Clarity, CTA Effectiveness, Emotional Resonance)
+- The 2 platform-specific criteria that match the target platform
 
-**AI smell test (do this FIRST):**
-- Count the dashes. More than 1 per 200 words? Rewrite to eliminate extras.
-- Read every sentence. Does anything sound like "an AI wrote this"? Rewrite it.
-- Check for "seamlessly", "effortlessly", "streamline", "empower", "leverage", "unlock", "delve". Remove all.
-- Check for repetitive sentence structures (e.g. three sentences in a row starting with "It" or "This"). Vary them.
-- Check for the "X — Y" dash pattern. Replace with periods, commas, or colons.
+Each criterion has a minimum threshold. If ANY criterion falls below its threshold, the copy does not pass.
 
-**Platform-native check:**
-- Does this read like something that actually performs well on this platform? (informed by Step 5 research)
-- Does the format match platform conventions? (length, structure, hashtag usage, etc.)
+#### 6c. Diagnose failures
 
-**Brand check:**
-- No empty hype words (revolutionary, game-changing, cutting-edge without substance)
-- No cliché openers (In today's fast-paced world...)
-- No corporate stiffness (We are pleased to announce...)
-- No over-promising (replace all your tools, never code again)
-- Chinese copy sounds native, not translated
-- CTA is present and natural
+For each criterion that scored below threshold, write a specific diagnosis:
+- What exactly is wrong? (not "hook is weak" but "the opening line is a generic statement that could apply to any AI product")
+- Why does it fail? (what specific pattern, word choice, or structure causes the low score?)
+- What would fix it? (a concrete direction, not "make it better")
 
-### Step 8: Present and Refine
+#### 6d. Rewrite and re-score
 
-After presenting copy, offer to adjust:
+Rewrite the copy based on the diagnoses. Then score again from scratch. Do not carry over scores from the previous round.
+
+**Repeat 6b-6d until all criteria pass.** Maximum 3 iterations. If still failing after 3 rounds, present the best version and tell the user which criteria are still below threshold and why.
+
+#### 6e. Adversarial attack
+
+Once all scores pass, pick the most dangerous adversarial persona from scoring-criteria.md for this specific copy:
+- The Distracted Scroller (for social media)
+- The Skeptical Developer (for dev-focused content)
+- The Non-Technical User (for general audience content)
+- The Competitor's CMO (for positioning and landing pages)
+- The Cynical Redditor (for Reddit and Product Hunt)
+
+Attack the copy from that persona's perspective. If the attack reveals a real weakness (not just nitpicking), diagnose and rewrite one more time.
+
+#### What to show the user
+
+After the loop completes, present:
+1. The final copy (all variations)
+2. A brief scorecard showing the final scores for each criterion
+3. One sentence on what the adversarial persona tried to break and why it held up (or what was fixed)
+
+Do NOT show the user every intermediate draft. Only show the final passing version.
+
+### Step 7: Present and Refine
+
+After presenting the scored copy, offer to adjust:
 - Tone (more casual / more professional / more bold)
 - Length (shorter / longer)
 - Focus (different feature or angle)
@@ -171,4 +193,4 @@ After presenting copy, offer to adjust:
 - Audience targeting (developers vs. general users vs. creators)
 - Format (switch from thread to single tweet, etc.)
 
-Iterate quickly. Each revision should clearly state what changed and why.
+When the user requests changes, run the same score-diagnose-rewrite loop on the revised version. Every revision must pass the same thresholds.

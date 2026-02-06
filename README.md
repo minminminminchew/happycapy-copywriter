@@ -27,18 +27,21 @@ Supports 12 platforms, multiple formats per platform, and three language modes (
 
 ## How it works
 
-The skill follows an 8-step workflow:
+The skill follows a 7-step workflow:
 
 1. **Pick the platform** - Where will this copy live?
 2. **Pick the format** - What type of content? (thread vs. single tweet, post vs. article, etc.)
 3. **Pick tone and language** - Suggests defaults per platform, you can override
 4. **Gather context** - What feature, update, or theme to write about
 5. **Research** - Searches for high-performing examples of the same platform + format combo, shares insights before writing
-6. **Generate** - Writes copy with multiple variations for short/medium-form
-7. **Quality check** - AI smell test, platform-native check, brand check
-8. **Refine** - Iterate on tone, length, focus, language mix
+6. **Generate, score, and self-improve** - Recursive loop: generate draft, score against criteria, diagnose failures, rewrite, re-score. Repeats until all criteria pass. Then stress-tests through an adversarial persona attack.
+7. **Present and refine** - Iterate on tone, length, focus, language mix. Every revision goes through the same scoring loop.
 
 ## Key features
+
+**Recursive self-improvement loop.** The skill doesn't just generate and ship. It scores every draft against 8 criteria (6 universal + 2 platform-specific), diagnoses what's weak, rewrites, and re-scores. Nothing gets presented until all criteria pass their minimum thresholds. After scoring, it stress-tests the copy through an adversarial persona attack (e.g., "The Skeptical Developer", "The Cynical Redditor") to find weaknesses a checklist might miss.
+
+**Scoring criteria.** Every piece of copy is scored 1-10 on: Hook Power, Human Voice, Brand Alignment, Clarity, CTA Effectiveness, Emotional Resonance, plus 2 platform-specific criteria. Each has a defined minimum threshold and automatic score caps for specific violations (e.g., using banned AI words caps Human Voice at 5/10).
 
 **Anti-AI writing rules.** The skill actively avoids AI writing tells: excessive dashes, "seamlessly/effortlessly/leverage" vocabulary, repetitive sentence structures, and generic patterns like "Whether you're X or Y." Copy should read like a human wrote it.
 
@@ -56,6 +59,7 @@ happycapy-copywriter/
 └── references/
     ├── brand-foundation.md         # Product facts, positioning, audiences, anti-patterns
     ├── platform-guides.md          # Format rules and structure patterns for 12 platforms
+    ├── scoring-criteria.md         # Scoring rubric, thresholds, and adversarial personas
     └── examples.md                 # Real brand copy examples with voice analysis
 ```
 
