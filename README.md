@@ -13,7 +13,7 @@ Supports 12 platforms, multiple formats per platform, and three language modes (
 | Platform | Formats |
 |----------|---------|
 | Twitter / X | Single tweet, thread, reply/quote tweet, bio |
-| 小红书 | 图文笔记, short video caption, comment reply |
+| Xiaohongshu (RED) | Image-text post, short video caption, comment reply |
 | LinkedIn | Post, article, comment, company page intro |
 | Product Hunt | Launch post, discussion post, comment, tagline |
 | Reddit | Post, comment, AMA answer |
@@ -44,7 +44,7 @@ The skill follows an 8-step workflow:
 
 **Research before writing.** Before generating any copy, the skill searches for top-performing examples on the target platform. It studies hooks, structure, tone, and engagement patterns, then applies those insights.
 
-**Bilingual native.** HappyCapy's brand naturally mixes English and Chinese. The skill handles 中英 code-switching without awkward forced translations. Technical terms (Claude Code, Skills, Agent, AI) stay in English.
+**Bilingual native.** HappyCapy's brand naturally mixes English and Chinese. The skill handles code-switching between both languages without awkward forced translations. Technical terms (Claude Code, Skills, Agent, AI) stay in English.
 
 **Opinionated.** The skill pushes back on off-brand requests and suggests angles you might not have considered. It won't just say yes to everything.
 
@@ -71,11 +71,11 @@ cp -r happycapy-copywriter ~/.claude/skills/
 
 Trigger the skill by asking Claude to write copy for HappyCapy. Examples:
 
-- "写文案" / "write copy"
-- "帮我写一条推文"
+- "write copy"
 - "Write a Product Hunt launch post"
-- "Draft a 小红书 post about the Skills feature"
+- "Draft a Xiaohongshu post about the Skills feature"
 - "Write ad copy for Google Ads"
+- "Help me write a tweet about the new update"
 
 ## Brand voice in a nutshell
 
